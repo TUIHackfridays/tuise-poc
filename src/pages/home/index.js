@@ -27,8 +27,8 @@ export class Home extends React.Component {
 }
 
 Home.propTypes = {
-  fetch: React.PropTypes.object.isRequired,
-  users: React.PropTypes.object.isRequired
+  // fetch: React.PropTypes.object.isRequired,
+  // users: React.PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps, { fetch })(Home);

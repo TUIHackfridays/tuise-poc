@@ -3,16 +3,12 @@ import { Route, IndexRoute } from 'react-router';
 import App from './containers/App';
 import HomePage from './pages/home';
 import LandingPage from './pages/landing';
-import LoginPage from './pages/login';
-import {requireAuthentication} from './components/auth';
-import Auth from './containers/Auth';
 import NotFoundPage from './pages/notFound';
 
 export default (
   <Route path="/" component={App}>
-    <Route path="login" component={LoginPage}/>
     <IndexRoute component={LandingPage}/>
-    <Route path="app" component={requireAuthentication(Auth)}>
+    <Route path="app">
       <IndexRoute component={HomePage}/>
     </Route>
     <Route path="*" component={NotFoundPage}/>
