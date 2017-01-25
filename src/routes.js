@@ -4,6 +4,7 @@ import App from './containers/App';
 import HomePage from './pages/home';
 import LandingPage from './pages/landing';
 import NotFoundPage from './pages/notFound';
+import SettingsPage from './pages/settings';
 
 export default (
   <Route path="/" component={App}>
@@ -11,6 +12,7 @@ export default (
     <Route path="app">
       <IndexRoute component={HomePage}/>
     </Route>
+      <Route path="settings" component={SettingsPage}/>
     <Route path="*" component={NotFoundPage}/>
   </Route>
 );

@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+@import "../../../node_modules/react-toggle-switch/dist/css/switch.min.css";
+
+// Home page sass 
+
+.switch {
+	position: absolute;
+	right: 20px;
+	bottom: 15px;
+}

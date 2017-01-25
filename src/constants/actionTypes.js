@@ -1,4 +1,8 @@
-// Example actions
-export const USERS_PENDING = 'USERS_PENDING';
-export const USERS_FULFILLED = 'USERS_FULFILLED';
-export const USERS_REJECTED = 'USERS_REJECTED';
+export const ADD_TODO = 'ADD_TODO'
+export const DELETE_TODO = 'DELETE_TODO'
+export const EDIT_TODO = 'EDIT_TODO'
+export const COMPLETE_TODO = 'COMPLETE_TODO'
+export const COMPLETE_ALL = 'COMPLETE_ALL'
+export const CLEAR_COMPLETED = 'CLEAR_COMPLETED'
+
+export const EDIT_SETTING = 'EDIT_SETTING'

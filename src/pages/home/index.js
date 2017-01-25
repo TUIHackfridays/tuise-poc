@@ -1,34 +1,29 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetch } from '../../actions/baseActions';
+import TodoList from '../../components/todoList'
 import './style.scss';
 
-const mapStateToProps = ({ users }) => ({
-  users: users.data
+
+
+const mapStateToProps = ({ todos }) => ({
+  todos: todos
 });
 
 export class Home extends React.Component {
 
-  componentDidMount() {
-    this.props.fetch('USERS');
-  }
-
   render() {
     return (
       <div className="root">
-        <h1>React / Redux DonderStarter</h1>
-        <small>If you're reading the user list, it means it's working!</small>
-        <ol>
-          { this.props.users.map(user => <li key={user.id}>{user.first_name} {user.last_name}</li>) }
-        </ol>
+        <h1>2Pac List</h1>
+        <TodoList todos={this.props.todos}/>
       </div>
     );
   }
 }
 
 Home.propTypes = {
-  // fetch: React.PropTypes.object.isRequired,
-  // users: React.PropTypes.object.isRequired
+  todos: React.PropTypes.array.isRequired
 };
 
 export default connect(mapStateToProps, { fetch })(Home);

@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
-import users from './usersReducer';
+import todos from './todosReducer';
+import settings from './settingsReducer';
 import {routerReducer} from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  users,
+  todos,
+  settings,
   routing: routerReducer
 });
 
