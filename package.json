@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-donderstarter",
+  "name": "tuise-poc",
   "version": "1.0.0",
-  "description": "react, redux, react-router boilerplate",
+  "description": "react & redux based web interface for TUIse",
   "main": "dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Cloudoki/react-redux-donderstarter.git"
+    "url": "https://github.com/TUIHackfridays/tuise-poc.git"
   },
   "keywords": [
     "react",
@@ -21,13 +21,14 @@
   ],
   "contributors": [
     "muffles <molefas@gmail.com>",
-    "mstrk <mstrk512@gmail.com> (http://www.meetbruno.eu/)"
+    "mstrk <mstrk512@gmail.com> (http://www.meetbruno.eu/)",
+    "koenbetsens <koen@cloudoki.com>"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Cloudoki/react-redux-donderstarter/issues"
+    "url": "https://github.com/TUIHackfridays/tuise-poc/issues"
   },
-  "homepage": "https://github.com/Cloudoki/react-redux-donderstarter.git#readme",
+  "homepage": "https://github.com/TUIHackfridays/tuise-poc#readme",
   "dependencies": {
     "babel-polyfill": "6.23.0",
     "history": "4.6.1",
