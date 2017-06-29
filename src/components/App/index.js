@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { authLogin } from 'containers/Auth/actions'
 import ThemeProvider from 'components/ThemeProvider'
-import Tabs from 'material-ui/Tabs';
 
 import routes from './routes'
 
@@ -19,8 +18,7 @@ class App extends Component {
   render () {
     return (
       <ThemeProvider>
-        <div style={styles.container}>
-          <Tabs></Tabs>
+        <div>
           {routes()}
         </div>
       </ThemeProvider>
@@ -31,13 +29,6 @@ class App extends Component {
 App.propTypes = {
   auth: PropTypes.object.isRequired,
   userAuthLogin: PropTypes.func.isRequired
-}
-
-const styles = {
-  container: {
-    display: 'flex',
-    minHeight: '100%'
-  }
 }
 
 const mapStateToProps = ({ auth }) => ({ auth })
