@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { authLogin } from 'containers/Auth/actions'
+import ThemeProvider from 'components/ThemeProvider'
+import Tabs from 'material-ui/Tabs';
 
 import routes from './routes'
 
@@ -16,9 +18,12 @@ class App extends Component {
 
   render () {
     return (
-      <div style={styles.container}>
-        {routes()}
-      </div>
+      <ThemeProvider>
+        <div style={styles.container}>
+          <Tabs></Tabs>
+          {routes()}
+        </div>
+      </ThemeProvider>
     )
   }
 }
