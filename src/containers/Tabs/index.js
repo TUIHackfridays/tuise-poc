@@ -6,8 +6,8 @@ import { authLogin } from 'containers/Auth/actions'
 import ThemeProvider from 'components/ThemeProvider'
 import {Tabs, Tab} from 'material-ui/Tabs'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import VoiceOverIcon from 'material-ui/svg-icons/action/record-voice-over'
-import HomeIcon from 'material-ui/svg-icons/action/home'
+import LiveHelpIcon from 'material-ui/svg-icons/communication/live-help'
+import HomeIcon from 'material-ui/svg-icons/social/public'
 import LocationIcon from 'material-ui/svg-icons/communication/location-on'
 import TuiGlobe from '../TuiGlobe'
 import HomePage from '../HomePage'
@@ -28,8 +28,8 @@ class TabsWrapper extends Component {
     return (
       <ThemeProvider>
         <div>
-          <Tabs>
-            <Tab icon={<VoiceOverIcon />} >
+          <Tabs inkBarStyle={styles.inkBar} tabItemContainerStyle={styles.tab}>
+            <Tab icon={<LiveHelpIcon />}>
               <div>
                 <TuiGlobe />
                 <LiveHelp />
@@ -57,6 +57,15 @@ class TabsWrapper extends Component {
 TabsWrapper.propTypes = {
   auth: PropTypes.object.isRequired,
   userAuthLogin: PropTypes.func.isRequired
+}
+
+const styles = {
+    tab: {
+        backgroundColor: '#81D4FA'
+    },
+    inkBar: {
+        backgroundColor: '#f44336'
+    }
 }
 
 const mapStateToProps = ({ auth }) => ({ auth })
