@@ -1,17 +1,45 @@
-import React from 'react'
-import CircularProgress from 'material-ui/CircularProgress';
+import React, { Component } from 'react'
 
 import 'styles/homepage.scss'
 
+class TuiGLobe extends Component {
+  constructor(props) {
+     super(props);
+     this.state = {
+       clss: 'wereldbol'
+     }
+   }
 
-const TuiGLobe = () => <div style={styles.container}>
-  <CircularProgress />
-    <div className='wereldbol'>
-        <div className='mond'><img src="./assets/TUI.svg" /></div>
-        <div className='oog'></div>
-    </div>
-    <div className='schaduw'></div>
-</div>
+  render () {
+    return (
+      <div style={styles.container}>
+        <div className={this.state.clss}>
+            <div className='mond'><img src="./assets/TUI.svg" /></div>
+            <div className='oog'></div>
+        </div>
+        <div className='schaduw'></div>
+      </div>
+    )
+  }
+
+  componentDidMount() {
+
+    this.wink()
+  }
+
+  wink() {
+
+    this.setState({'clss': 'wereldbol wink'});
+
+    setTimeout(function () {
+        this.setState({'clss': 'wereldbol'});
+    }.bind(this), 1000)
+
+    setTimeout(function () {
+        this.wink()
+    }.bind(this), Math.random() * 20000)
+  }
+}
 
 const styles = {
   container: {
