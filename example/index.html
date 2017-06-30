@@ -1,0 +1,460 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            padding-top: 10%;
+        }
+        
+        .wereldbol {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            background-color: #c2e6fa;
+            -webkit-border-radius: 300px;
+            -moz-border-radius: 300px;
+            border-radius: 300px;
+            z-index: 9999;
+            background-image: url('img/molumen-world-map-1.png');
+            background-size: auto 300px;
+            background-position: top left;
+            position: relative;
+            transform: scaleY(.95);
+            animation: zweven 3s ease infinite;
+            -webkit-box-shadow: inset -5px -11px 0px 0px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: inset -5px -11px 0px 0px rgba(0, 0, 0, 0.05);
+            box-shadow: inset -5px -11px 0px 0px rgba(0, 0, 0, 0.05);
+        }
+        
+        .mond {
+            position: absolute;
+            bottom: 70px;
+            left: auto;
+            text-align: center;
+            margin-left: 25%;
+        }
+        
+        .spin {
+            animation: spinner 1s ease;
+            transition: 1s ease all;
+        }
+        
+        .mond img {
+            width: 150px;
+        }
+        
+        .praten .mond {
+            animation: groter .5s ease infinite;
+        }
+        
+        .neeknikken {
+            animation: leftright 1s ease;
+        }
+        
+        .jaknikken {
+            animation: updown 1s ease;
+        }
+        
+        .neeknikken .mond {
+            animation: neemond 1s ease;
+        }
+        
+        .jaknikken .mond {
+            animation: jamond 1s ease;
+        }
+        
+        .neeknikken .oog {
+            animation: neeoog 1s ease;
+        }
+        
+        .jaknikken .oog {
+            animation: jaoog 1s ease;
+        }
+        
+        .confused .mond {
+            animation: confusedmond 2s ease;
+        }
+        
+        .confused .oog {
+            animation: confusedoog 2s ease;
+        }
+        
+        .bounce {
+            animation: bouncing .8s ease;
+        }
+        
+        .enlarge {
+            animation: shadowlarger .8s ease;
+        }
+        
+        .schaduw {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            background-color: #ededed;
+            -webkit-border-radius: 300px;
+            -moz-border-radius: 300px;
+            border-radius: 300px;
+            transform: scaleY(.15);
+            z-index: -9999;
+        }
+        
+        .oog {
+            background-color: #DB2128;
+            width: 25px;
+            height: 25px;
+            -webkit-border-radius: 25px;
+            -moz-border-radius: 25px;
+            border-radius: 25px;
+            position: absolute;
+            top: 90px;
+            right: 70px;
+            transform: scaleY(1.15);
+        }
+        
+        .wink .oog {
+            animation: knipoog 4s infinite;
+        }
+        
+        @keyframes knipoog {
+            0% {
+                transform: scaleY(0.15);
+            }
+            10% {
+                transform: scaleY(1.15);
+            }
+            100% {
+                transform: scaleY(1.15);
+            }
+        }
+        
+        @keyframes zweven {
+            0% {
+                top: 0px;
+            }
+            5% {
+                top: 2px;
+            }
+            50% {
+                top: 10px;
+            }
+            55% {
+                top: 12px;
+            }
+            98% {
+                top: 2px;
+            }
+            100% {
+                top: 0px;
+            }
+        }
+        
+        @keyframes bouncing {
+            0% {
+                top:0px;
+                transform: scaleY(0.95);
+            }
+            
+         
+            
+            20% {
+                top:190px;
+                transform: scaleX(1.2) scaleY(0.75);
+            }
+            
+            
+            65% {
+                top:-40px;
+                transform: scaleY(1.05);
+            }
+            
+            100% {
+                top:0px;
+                transform: scaleY(0.95);
+            }
+        }
+        
+        @keyframes groter {
+            0% {
+                transform: scale(1.0);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1.0);
+            }
+        }
+        
+        @keyframes leftright {
+            0% {
+                background-position: 0px;
+            }
+            25% {
+                background-position: 25px;
+            }
+            50% {
+                background-position: -25px;
+            }
+            75% {
+                background-position: 25px;
+            }
+        }
+        
+        @keyframes updown {
+            0% {
+                background-position: 0 0px;
+            }
+            25% {
+                background-position: 0 25px;
+            }
+            50% {
+                background-position: 0 -25px;
+            }
+            75% {
+                background-position: 0 25px;
+            }
+        }
+        
+        @keyframes neemond {
+            0% {
+                left: 0;
+            }
+            25% {
+                left: 25;
+            }
+            50% {
+                left: -25;
+            }
+            75% {
+                left: 25;
+            }
+            100% {
+                left: 0;
+            }
+        }
+        
+        @keyframes jamond {
+            0% {
+                bottom: 70;
+            }
+            25% {
+                bottom: 55;
+            }
+            50% {
+                bottom: 95;
+            }
+            75% {
+                bottom: 55;
+            }
+            100% {
+                bottom: 70;
+            }
+        }
+        
+        @keyframes neeoog {
+            0% {
+                right: 70;
+            }
+            25% {
+                right: 55;
+            }
+            50% {
+                right: 95;
+            }
+            75% {
+                right: 55;
+            }
+            100% {
+                right: 70;
+            }
+        }
+        
+        @keyframes jaoog {
+            0% {
+                top: 90;
+            }
+            25% {
+                top: 115;
+            }
+            50% {
+                top: 65;
+            }
+            75% {
+                top: 115;
+            }
+            100% {
+                top: 90;
+            }
+        }
+        
+        @keyframes confusedmond {
+            0% {
+                transform: rotate(0deg) rotateX(0);
+            }
+            40% {
+                transform: rotate(60deg) rotateX(180deg);
+                bottom: 120px;
+            }
+            80% {
+                transform: rotate(60deg) rotateX(180deg);
+                bottom: 120px;
+            }
+            100% {
+                transform: rotate(0deg) rotateX(0);
+            }
+        }
+        
+        @keyframes confusedoog {
+            0% {
+                top: 90px;
+                right: 70px;
+            }
+            40% {
+                top: 210px;
+                right: 140px;
+            }
+            80% {
+                top: 210px;
+                right: 140px;
+            }
+            100% {
+                top: 90px;
+                right: 70px;
+            }
+        }
+        
+        @keyframes spinner {
+            0% {
+                
+                transform: scaleY(0.95) rotate(0deg);
+            }
+          
+            100% {
+                
+                transform: scaleY(0.95) rotate(1440deg);
+            }
+        }
+        
+        @keyframes shadowlarger {
+            0% {
+                
+                transform: scaleY(.15) scaleX(1.00);
+            }
+            
+            20% {
+                
+                transform: scaleY(.15) scaleX(1.15);
+            }
+          
+            100% {
+                
+                transform: scaleY(.15) scaleX(1.00);
+            }
+        }
+        
+        button {
+            border: 0;
+            background-color: #eee;
+            font-size: 18px;
+            padding: 20px;
+            cursor: pointer;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            color:#333;
+            outline: none;
+        }
+        
+        button i.fa {
+            font-size: 28px !important;
+            color:#333;
+        }
+        
+        button:hover {
+            background-color:#ccc;
+        }
+    </style>
+    <script>
+        function praten() {
+            $('.wereldbol').attr('class', 'wereldbol');
+            $(".wereldbol").addClass("praten");
+            setTimeout(function () {
+                $(".wereldbol").removeClass("praten");
+            }, 1000);
+        }
+
+        function nee() {
+            $('.wereldbol').attr('class', 'wereldbol');
+            $(".wereldbol").addClass("neeknikken");
+            setTimeout(function () {
+                $(".wereldbol").removeClass("neeknikken");
+            }, 1000);
+        }
+
+        function ja() {
+            $('.wereldbol').attr('class', 'wereldbol');
+            $(".wereldbol").addClass("jaknikken");
+            setTimeout(function () {
+                $(".wereldbol").removeClass("jaknikken");
+            }, 1000);
+        }
+
+        function wink() {
+            $('.wereldbol').attr('class', 'wereldbol');
+            $(".wereldbol").addClass("wink");
+            setTimeout(function () {
+                $(".wereldbol").removeClass("wink");
+            }, 1000);
+        }
+
+        function vraagteken() {
+            $('.wereldbol').attr('class', 'wereldbol');
+            $(".wereldbol").addClass("confused");
+            setTimeout(function () {
+                $(".wereldbol").removeClass("confused");
+            }, 2000);
+        }
+        
+        function spin() {
+            $('.wereldbol').attr('class', 'wereldbol');
+            $(".wereldbol").addClass("spin");
+            setTimeout(function () {
+                $(".wereldbol").removeClass("spin");
+            }, 1000);
+        }
+        
+        function bounce() {
+            $('.wereldbol').attr('class', 'wereldbol');
+            $(".wereldbol").addClass("bounce");
+            $(".schaduw").addClass("enlarge");
+            setTimeout(function () {
+                $(".wereldbol").removeClass("bounce");
+                $(".schaduw").removeClass("enlarge");
+            }, 800);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wereldbol">
+            <div class="mond"><img src="img/TUI.svg" /></div>
+            <div class="oog"></div>
+        </div>
+        <div class="schaduw"></div>
+        <center>
+            <button onclick="praten()"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+            <button onclick="nee()"><i class="fa fa-times-circle-o" aria-hidden="true"></i></button>
+            <button onclick="ja()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
+            <button onclick="wink()"><i class="fa fa-eye" aria-hidden="true"></i></button>
+            <button onclick="vraagteken()"><i class="fa fa-question-circle-o" aria-hidden="true"></i></button>
+            <button onclick="spin()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            <button onclick="bounce()"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></button>
+        </center>
+    </div>
+</body>
+
+</html>
